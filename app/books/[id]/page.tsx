@@ -1,4 +1,5 @@
 import ReadBtn from "@/app/components/bookDetails/ReadBtn";
+import WishBtn from "@/app/components/bookDetails/WishBtn";
 import { BookData } from "@/app/types/type";
 import Image from "next/image";
 
@@ -20,7 +21,7 @@ const BookDetailPage = async ({ params }: IBookDetailPageProps) => {
     (book: BookData) => book.bookId === Number(id),
   ) as BookData;
 
-  console.log(book, "this is id");
+  // console.log(book, "this is id");
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -128,9 +129,7 @@ const BookDetailPage = async ({ params }: IBookDetailPageProps) => {
           <div className="card-actions mt-5">
            <ReadBtn book={book} />
 
-            <button className="btn btn-outline rounded-xl px-8">
-              Add to Wishlist
-            </button>
+            <WishBtn book={book}/>
           </div>
         </div>
       </div>
